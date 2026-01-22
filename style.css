@@ -1,0 +1,291 @@
+/* --- 1. CONFIGURATION GÉNÉRALE --- */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ton contenu occupe 85% de la largeur et est centré */
+main {
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Interligne aéré pour tous les paragraphes */
+p {
+    line-height: 1.8;
+    font-size: 22px;
+}
+
+/* --- 2. TITRES --- */
+
+/* Le gros titre "Portfolio" tout en haut */
+h1 {
+    font-size: 150px;
+    /* Réduit un peu car 200px c'est gigantesque */
+    font-family: 'Caveat', cursive;
+    margin: 0;
+}
+
+/* Titres de sections (Formations, Compétences, Expériences) */
+
+h3 {
+    color: #980faa;
+    font-family: 'Impact', sans-serif;
+    font-size: 80px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    /* Espace important pour un look design */
+    margin: 40px 0;
+}
+
+
+/* Titre du profil (Lou Guillé) et sous-titres */
+h4 {
+    color: #980faa;
+    font-family: 'Impact', sans-serif;
+    font-size: 60px;
+    text-transform: uppercase;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+/* Titres des expériences (McDo, etc.) */
+h5 {
+    color: #980faa;
+    font-family: 'Impact', sans-serif;
+    font-size: 30px;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+/* --- 3. HEADER & NAVIGATION --- */
+header {
+    background: #980faa;
+    color: white;
+    padding: 30px;
+    border-bottom: 3px solid #7a0b89;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* --- 4. STRUCTURE DES BLOCS (Image + Texte) --- */
+.experience-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin: 60px 0;
+}
+
+.experience-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.exp-text-box {
+    flex: 1;
+    background: #f3e6f7;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* --- 5. SECTION FORMATIONS (Les Boutons) --- */
+.formation-list {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-bottom: 50px;
+}
+
+.lien-formation {
+    text-decoration: none;
+}
+
+
+.formation {
+    background: #980faa;
+    color: white;
+    padding: 30px;
+    width: 380px;
+    /* Largeur fixe pour les deux */
+    min-height: 200px;
+    /* Hauteur minimum pour qu'ils soient identiques */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centre le texte verticalement dans le bouton */
+    transition: transform 0.3s ease;
+}
+
+/* On force le titre à l'intérieur du bouton en blanc et on réduit sa taille */
+/* Titres spécifiques DANS les boutons de formation (Bac, BUT) */
+.formation h3,
+.formation h4 {
+    color: white !important;
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.formation p {
+    color: white;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.lien-formation:hover .formation {
+    transform: translateY(-10px);
+}
+
+/* --- 6. SECTION COMPÉTENCES (Style Manuscrit) --- */
+.competences ul {
+    list-style-position: inside;
+    display: inline-block;
+    text-align: left;
+}
+
+.competences li {
+    font-family: 'Caveat', cursive;
+    font-size: 38px;
+    color: #000000;
+    padding: 5px 0;
+    list-style-type: "★ ";
+}
+
+.competences li::marker {
+    color: #980faa;
+}
+
+/* --- 7. IMAGES --- */
+.exp-image-box img {
+    width: 550px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 6px solid #980faa;
+}
+
+/* Cas particulier pour l'image du journal */
+.img-journal {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 800px;
+}
+
+/* --- 8. FOOTER --- */
+footer {
+    background: #bbbbbb;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+/* ============================= */
+/* RESPONSIVE – TABLETTE & MOBILE */
+/* ============================= */
+
+@media (max-width: 1024px) {
+
+    main {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 90px;
+    }
+
+    h3 {
+        font-size: 60px;
+        letter-spacing: 4px;
+    }
+
+    h4 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    /* Les blocs image + texte passent en colonne */
+    .experience-row,
+    .experience-row.reverse {
+        flex-direction: column;
+    }
+
+    .exp-image-box img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .formation-list {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .formation {
+        width: 90%;
+        max-width: 380px;
+    }
+}
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px 10px;
+    }
+
+    header a {
+        display: block;
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    h3 {
+        font-size: 45px;
+        letter-spacing: 2px;
+    }
+
+    h4 {
+        font-size: 32px;
+    }
+
+    h5 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .exp-text-box {
+        padding: 20px;
+    }
+
+    .exp-image-box img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .competences li {
+        font-size: 26px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
